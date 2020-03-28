@@ -1,0 +1,275 @@
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    background: transparent;
+
+    width: 100%;
+    height: 100px;
+
+    transition: all 0.3s linear;
+
+        @media screen and (min-device-width: 320px) and (max-device-width: 1000px) and (orientation: landscape) {
+            height: 60px;
+        }
+
+        @media screen and (max-device-width: 680px) and (orientation: portreit) {
+            height: 70px;   
+            transition: all 0.3s linear;
+        }
+
+		&__container {
+            width: 100%;
+            max-width: 1300px;
+            height: 100%;
+
+            padding: 0px 30px;
+            margin: 0px auto;
+		}
+
+		&__body {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @media screen and (max-width: 540px) {
+                flex-direction: column;
+            }
+        }
+        
+        .other {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+		&__logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media screen and (max-width: 540px) {
+                padding-top: 20px;
+            }
+		}
+
+		&__img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-right: 7px;
+		}
+
+		&__h1 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFFFFF;
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+        }
+
+        
+        &__burger {
+            opacity: 0;
+            display: none;
+            z-index: 4;
+            width: 80px;
+
+            @media screen and (max-width: 1000px) {
+                display: block;
+                opacity: 1;
+                transition: all 0.3s linear;
+            }
+        }
+
+
+        .ham {
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: transform 400ms;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .hamRotate.active {
+            transform: rotate(45deg);
+        }
+
+        .line {
+            fill:none;
+            transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+            stroke:#fff;
+            stroke-width:5.5;
+            stroke-linecap:round;
+        }   
+
+        .ham8 .top {
+            stroke-dasharray: 40 160;
+        }
+        .ham8 .middle {
+            stroke-dasharray: 40 142;
+            transform-origin: 50%;
+            transition: transform 400ms;
+        }
+        .ham8 .bottom {
+            stroke-dasharray: 40 85;
+            transform-origin: 50%;
+            transition: transform 400ms, stroke-dashoffset 400ms;
+        }
+        .ham8.active .top {
+            stroke-dashoffset: -64px;
+        }
+        .ham8.active .middle {
+            //stroke-dashoffset: -20px;
+            transform: rotate(90deg);
+        }
+        .ham8.active .bottom {
+            stroke-dashoffset: -64px;
+        }
+
+		&__menu {
+            font-size: 15px;
+            white-space: nowrap;
+
+            transition: all 1s ease 0s;
+
+            ul {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            @media screen and (max-width: 1000px) {
+
+                padding: 0px;
+                margin: 0px;
+
+                position: fixed;
+                top: -100%;
+                left: 0;
+                width: 100%;
+                max-width: 100%;
+                height: 100%;
+                overflow: auto;
+                background: linear-gradient(45deg, #D52047 33%, #ED4C5C 66%);
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                transition: all 0.3s ease 0s;
+
+
+                &.active {
+                    transform: translateY(100%);
+                    margin-right: 17px;
+                }
+
+                ul {
+                    flex-direction: column;
+                    line-height: 100px;
+                    margin-top: 30px;
+
+                    font-size: 30px;
+
+                    text-align: left;
+
+                    @media screen and (max-width: 320px) {
+                        font-size: 25px;
+                    }
+                }
+
+            }
+		}
+
+		&__link {
+            margin-left: 23px;
+
+            &:hover {
+                a {
+                    &:before {
+                        opacity: 1;
+                    }
+                }
+
+            }
+            
+            a {
+                color: #FFFFFF;
+                font-weight: 700;
+                transition: all 0.3s linear;
+                padding: 1px 4px;
+                border-radius: 8px;
+
+                position: relative;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    background-color: white;
+                    width: 100%;
+                    height: 2px;
+                    opacity: 0;
+                    pointer-events: none;
+
+                    transition: all 0.2s linear;
+                }
+
+                @media screen and (max-width: 1000px) {
+                    border-radius: 10px;
+                }
+            }
+
+            @media screen and (max-width: 1000px) {
+                margin-left: 0;
+            }
+        }
+        
+        &__do {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-left: 20px;
+        }
+
+        .trigger__bg {
+            background: url(../img/USA.svg) 5% 50% no-repeat;
+        }
+
+		&__btn button {
+            width: 100px;
+            height: 40px;
+
+            margin-left: 20px;
+
+            background: transparent;
+            border: 2px solid #FFFFFF;
+            border-radius: 7px;
+            
+            text-transform: uppercase;
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+
+            transition: all 0.3s linear;
+
+            &:hover {
+                background: #FFFFFF;
+                color: #ED4C5C;  
+            }
+
+		}
+}
