@@ -453,6 +453,7 @@ body.fancybox-active {
   height: 100vh;
   background: url(../img/Bg.png) no-repeat;
   background-position: center center;
+  background-attachment: fixed;
   background-size: cover;
 }
 @media screen and (min-device-width: 320px) and (max-device-width: 1200px) and (orientation: landscape) {
